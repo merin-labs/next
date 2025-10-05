@@ -42,7 +42,7 @@ export default function Home() {
       {/* Hero Section */}
       <section className="max-w-5xl mx-auto">
         <h1 className="text-6xl font-semibold text-center tracking-tight">
-          Investigating AI applications at scale
+          Researching AI applications at scale
         </h1>
         <p className="text-2xl mt-4 text-center">
           Merin is a research lab exploring the intersection of edge computing,

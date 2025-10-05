@@ -5,6 +5,25 @@ import { Button } from "./ui/button";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 
+const navItems = [
+  {
+    label: "Blog",
+    href: "/blog",
+  },
+  {
+    label: "Projects",
+    href: "/projects",
+  },
+  {
+    label: "Research",
+    href: "/research",
+  },
+  {
+    label: "Team",
+    href: "/team",
+  },
+];
+
 export default function Nav() {
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -45,24 +64,15 @@ export default function Nav() {
           </Link>
         </div>
         <div className="flex items-center gap-16">
-          <Link
-            href="/blog"
-            className="text-sm opacity-65 hover:opacity-100 transition ease-out"
-          >
-            Blog
-          </Link>
-          <Link
-            href="/projects"
-            className="text-sm opacity-65 hover:opacity-100 transition ease-out"
-          >
-            Projects
-          </Link>
-          <Link
-            href="/research"
-            className="text-sm opacity-65 hover:opacity-100 transition ease-out"
-          >
-            Research
-          </Link>
+          {navItems.map((item) => (
+            <Link
+              key={item.label}
+              href={item.href}
+              className="text-sm opacity-65 hover:opacity-100 transition ease-out"
+            >
+              {item.label}
+            </Link>
+          ))}
         </div>
         <div className="flex items-center gap-1">
           <Button variant="ghost" size="icon" asChild>
